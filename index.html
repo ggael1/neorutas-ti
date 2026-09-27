@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoRutas TI - Inclusión Laboral</title>
+    <style>
+        /* Perceptible: Alto contraste (Fondo oscuro, texto claro) y fuentes escalables */
+        :root {
+            --bg-color: #121212;
+            --text-color: #E0E0E0;
+            --accent-color: #4CAF50;
+            --focus-color: #FFEB3B;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-size: 110%; /* Fuente base más grande para mejorar legibilidad */
+        }
+        /* Operable: Enlace "Saltar al contenido" para lectores de pantalla */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: var(--accent-color);
+            color: #000;
+            padding: 10px;
+            z-index: 100;
+            transition: top 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        header {
+            background-color: #1F1F1F;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        /* Operable: Estados de foco claros para navegación con teclado */
+        a:focus, button:focus, input:focus, select:focus {
+            outline: 3px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 2rem;
+            background-color: #1E1E1E;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .btn {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Robusto / Operable: Navegación accesible -->
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <header role="banner">
+        <h1>NeoRutas TI</h1>
+        <nav role="navigation" aria-label="Menú principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#rutas">Rutas de Aprendizaje</a></li>
+                <li><a href="#registro">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido-principal" role="main">
+        <section id="inicio">
+            <!-- Perceptible: Atributo alt detallado en la imagen -->
+            <h2>Impulsa tu futuro tecnológico</h2>
+            <p>Conectamos tu talento con las mejores empresas a través de capacitación gratuita y empleo formal. Empieza desde cero y elige tu propio camino según tu vocación.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzawozTuSyroaP9B9kywZpUnw-mblj9nvk9TkyOUlenWMqJI3-1AvIObI&s=10" 
+                 alt="Fotografía de un grupo de jóvenes sonriendo mientras colaboran frente a una computadora portátil en un entorno de oficina moderna." 
+                 style="max-width: 100%; border-radius: 8px; margin-top: 1rem;">
+        </section>
+
+        <!-- Comprensible: Lenguaje claro y estructura predecible -->
+        <section id="rutas">
+            <h2>Nuestras Rutas (Avanza a tu ritmo)</h2>
+            <article>
+                <h3>1. Ruta Administrativa</h3>
+                <p>Aprende a usar Microsoft 365, Excel avanzado y herramientas de oficina para trabajar como especialista en datos.</p>
+            </article>
+            <article>
+                <h3>2. Ruta IT / Automatización</h3>
+                <p>Aprende a conectar aplicaciones corporativas y crear flujos de trabajo automáticos sin necesidad de escribir código complejo.</p>
+            </article>
+            <article>
+                <h3>3. Ruta de Desarrollo</h3>
+                <p>Adquiere lógica de programación estructurada y aprende a crear software a medida para proyectos internacionales.</p>
+            </article>
+        </section>
+
+        <section id="registro">
+            <h2>Regístrate en la Academia</h2>
+            <!-- Comprensible / Robusto: Formularios con instrucciones claras y etiquetas ARIA asociadas -->
+            <form action="#" method="POST">
+                <div style="margin-bottom: 1rem;">
+                    <label for="nombre">Nombre completo (Requerido):</label><br>
+                    <input type="text" id="nombre" name="nombre" required aria-required="true" 
+                           style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; background:#333; color:white; border:1px solid #555;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="interes">¿Qué ruta te interesa más explorar?</label><br>
+                    <select id="interes" name="interes" 
+                            style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; background:#333; color:white; border:1px solid #555;">
+                        <option value="no-se">Aún no lo sé (Quiero orientación en mi primer día)</option>
+                        <option value="admin">Ruta Administrativa</option>
+                        <option value="it">Ruta IT / Automatización</option>
+                        <option value="dev">Ruta de Desarrollo de Software</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Enviar mi solicitud</button>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo" style="text-align: center; padding: 2rem; background-color: #1F1F1F;">
+        <p>&copy; 2026 NeoRutas TI. Proyecto de diseño accesible.</p>
+    </footer>
+
+</body>
+</html>
